@@ -1,16 +1,20 @@
-package kwemsmodsource.init;
+package kwemsmod.init;
 
 import java.util.ArrayList;
 
-import kwemsmodsource.blocks.BlockBase;
-import kwemsmodsource.blocks.DemonBed;
+import kwemsmod.KwemsMod;
+import kwemsmod.blocks.BlockBase;
+import kwemsmod.blocks.DemonBed;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
 public class BlocksRegistry {
-    public static final ArrayList<BlockBase> BLOCKS = new ArrayList<BlockBase>();
+    public static final ArrayList<BlockBase> BLOCKS = new ArrayList<>();
+
+    @GameRegistry.ObjectHolder(KwemsMod.MOD_ID + ":demon_bed")
     public static final DemonBed DEMON_BED = new DemonBed("demon_bed");
 
     public static void register(IForgeRegistry<Block> registry) {
@@ -25,9 +29,7 @@ public class BlocksRegistry {
         }
     }
 
-    public static void registerModels() {
-        for(BlockBase block : BLOCKS) {
-            block.registerItemModel(Item.getItemFromBlock(block));
-        }
+    static {
+        BLOCKS.add(DEMON_BED);
     }
 }

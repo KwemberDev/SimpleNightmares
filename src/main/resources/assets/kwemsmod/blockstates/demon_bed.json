@@ -1,16 +1,7 @@
 {
-  "forge_marker":1,
-  "defaults": {
-    "textures": {
-      "all": "kwemsmod:blocks/test"
-    }
-  },
   "variants": {
-    "normal" : {
-      "model": "resources/assets/kwemsmod/blocks/test"
-    },
-    "inventory": {
-      "model": "kwemsmod:blocks/test"
+    "normal": {
+      "model": "kwemsmod:demon_bed"
     }
   }
 }

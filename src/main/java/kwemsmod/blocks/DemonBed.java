@@ -1,4 +1,4 @@
-package kwemsmodsource.blocks;
+package kwemsmod.blocks;
 
 import net.minecraft.block.material.Material;
 
@@ -8,7 +8,6 @@ public class DemonBed extends BlockBase {
         super(Material.ROCK, name);
         setHardness(3f);
         setResistance(5f);
-
     }
 
 }
