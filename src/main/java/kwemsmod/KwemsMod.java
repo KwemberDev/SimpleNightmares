@@ -1,45 +1,50 @@
 package kwemsmod;
 
 import kwemsmod.proxy.CommonProxy;
-
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import org.apache.logging.log4j.Logger;
 
-@Mod(modid= KwemsMod.MOD_ID, version = KwemsMod.VERSION, name = KwemsMod.NAME)
+
+
+// the @mod tell forge that this is a mod, the identifiers behind it are for the mod info.
+@Mod(modid = KwemsMod.MODID, name = KwemsMod.MODNAME, version = KwemsMod.MODVERSION, dependencies = "required-after:forge@[11.16.0.1865,)", useMetadata = true)
 public class KwemsMod {
-    public static final String MOD_ID = "kwemsmod";
-    public static final String VERSION = "1.0";
-    public static final String NAME = "kwemsmod";
 
-    @Instance
-    public static KwemsMod INSTANCE;
+    // create the mod info data
+    public static final String MODID = "kwemsmod";
+    public static final String MODNAME = "Kwembers Mod";
+    public static final String MODVERSION= "Alpha 0.0.1";
 
-    @SidedProxy(serverSide = "kwemsmod.proxy.CommonProxy", clientSide = "kwemsmod.proxy.ClientProxy")
-    public static CommonProxy PROXY;
+    //tells forge where to look for the server and client side proxies
+    @SidedProxy(clientSide = "kwemsmod.proxy.ClientProxy", serverSide = "kwemsmod.proxy.ServerProxy")
+    public static CommonProxy proxy;
 
-    @EventHandler
+    // creates an instance of the mod, tells forge to run this class on startup
+    @Mod.Instance
+    public static KwemsMod instance;
+
+    // creates a logger for the mod to log to console
+    public static Logger logger;
+
+    //IMPORTANT
+    //this is the preinit, init, and postinit methods for starting up the mod on forge, you register the loggers and the initialization events here.
+    @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(PROXY);
+        logger = event.getModLog();
+        proxy.preInit(event);
     }
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent e) {
+        proxy.init(e);
     }
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-
-    }
-
-    @EventHandler
-    public void serverStarting(FMLServerStartingEvent event) {
-
+    @Mod.EventHandler
+    public void postInit(FMLPostInitializationEvent e) {
+        proxy.postInit(e);
     }
 }

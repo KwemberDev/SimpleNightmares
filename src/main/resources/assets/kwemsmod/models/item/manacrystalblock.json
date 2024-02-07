@@ -1,5 +1,5 @@
 {
-  "parent": "kwemsmod:block/demon_bed",
+  "parent": "kwemsmod:block/manacrystalblock",
   "display": {
     "thirdperson": {
       "rotation": [
