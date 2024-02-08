@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "kwemsmod:items/lightwand"
+    "layer0": "kwemsmod:items/bat"
   },
   "display": {
     "ground": {
@@ -16,9 +16,9 @@
         0
       ],
       "scale": [
-        2,
-        2,
-        2
+        1,
+        1,
+        1
       ]
     },
     "fixed": {
@@ -50,9 +50,9 @@
         2
       ],
       "scale": [
-        2.0,
-        2.0,
-        2.0
+        1.4,
+        1.4,
+        1.4
       ]
     },
     "firstperson_righthand": {
@@ -67,9 +67,9 @@
         2
       ],
       "scale": [
-        1.5,
-        1.5,
-        1.5
+        1,
+        1,
+        1
       ]
     },
     "firstperson_lefthand": {
@@ -84,9 +84,9 @@
         2
       ],
       "scale": [
-        1.5,
-        1.5,
-        1.5
+        1,
+        1,
+        1
       ]
     },
     "thirdperson_lefthand": {
@@ -101,9 +101,9 @@
         2
       ],
       "scale": [
-        2.0,
-        2.0,
-        2.0
+        1.4,
+        1.4,
+        1.4
       ]
     }
   }

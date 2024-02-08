@@ -2,6 +2,7 @@ package kwemsmod.items;
 
 import kwemsmod.KwemsMod;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -11,6 +12,7 @@ public class LightWand extends Item {
     public LightWand() {
         setRegistryName("lightwand");
         setTranslationKey(KwemsMod.MODID + ".lightwand");
+        this.setCreativeTab(CreativeTabs.COMBAT);
     }
 
     @SideOnly(Side.CLIENT)

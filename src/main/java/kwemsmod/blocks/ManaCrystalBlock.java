@@ -4,6 +4,7 @@ import kwemsmod.KwemsMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
@@ -14,6 +15,7 @@ public class ManaCrystalBlock extends Block {
         super(Material.ROCK);
         setTranslationKey(KwemsMod.MODID + ".manacrystalblock");     // Used for localization (en_us.lang)
         setRegistryName("manacrystalblock");        // The unique name (within the mod) that identifies this block
+        this.setCreativeTab(CreativeTabs.MISC);
     }
     @SideOnly(Side.CLIENT)
     public void initModel() {

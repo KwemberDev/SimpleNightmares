@@ -3,6 +3,7 @@ package kwemsmod.proxy;
 import kwemsmod.ModBlocks;
 import kwemsmod.blocks.ManaCrystalBlock;
 import kwemsmod.config.Config;
+import kwemsmod.items.Bat;
 import kwemsmod.items.LightWand;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -16,6 +17,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.*;
 
 import java.io.File;
+
+import static kwemsmod.ModItems.bat;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
@@ -46,5 +49,6 @@ public class CommonProxy {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(ModBlocks.manacrystalblock).setRegistryName(ModBlocks.manacrystalblock.getRegistryName()));
         event.getRegistry().register(new LightWand());
+        event.getRegistry().register(new Bat(Item.ToolMaterial.STONE));
     }
 }

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kwemsmod:manacrystalblock"
+  },
+  "pattern": [
+    "ddd",
+    "ddd",
+    "ddd"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:dirt",
+      "data": 0
+    }
+  }
+}
