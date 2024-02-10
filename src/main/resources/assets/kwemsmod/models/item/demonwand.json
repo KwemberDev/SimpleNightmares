@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "kwemsmod:items/lightwand"
+    "layer0": "kwemsmod:items/demonwand"
   },
   "display": {
     "ground": {

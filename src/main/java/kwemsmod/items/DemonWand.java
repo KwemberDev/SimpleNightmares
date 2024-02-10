@@ -8,10 +8,10 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class LightWand extends Item {
-    public LightWand() {
-        setRegistryName("lightwand");
-        setTranslationKey(KwemsMod.MODID + ".lightwand");
+public class DemonWand extends Item {
+    public DemonWand() {
+        setRegistryName("demonwand");
+        setTranslationKey(KwemsMod.MODID + ".demonwand");
         this.setCreativeTab(CreativeTabs.COMBAT);
     }
 
