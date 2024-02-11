@@ -11,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class TileEntityDemonBedRenderer extends TileEntitySpecialRenderer<TileEntityDemonBed> {
     private final ModelBed model = new ModelBed();
-    private static final ResourceLocation TEXTURE = new ResourceLocation("kwemsmod", "textures/blocks/demonbed.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("kwemsmod", "textures/blocks/demonbedbase.png");
 
     @Override
     public void render(TileEntityDemonBed te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
