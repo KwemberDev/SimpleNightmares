@@ -21,11 +21,11 @@ import java.util.UUID;
 
 import static kwemsmod.ModItems.bat;
 
-public class Bat extends ItemSword {
-    public Bat(ToolMaterial material) {
+public class NailBat extends ItemSword {
+    public NailBat(ToolMaterial material) {
         super(material);
-        setRegistryName("bat");
-        setTranslationKey(KwemsMod.MODID + ".bat");
+        setRegistryName("nailbat");
+        setTranslationKey(KwemsMod.MODID + ".nailbat");
         this.setCreativeTab(CreativeTabs.COMBAT);
     }
 
@@ -34,7 +34,7 @@ public class Bat extends ItemSword {
         final Multimap<String, AttributeModifier> modifiers = super.getAttributeModifiers(slot, stack);
 
         if (slot == EntityEquipmentSlot.MAINHAND) {
-            replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, 1.168);
+            replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_DAMAGE, ATTACK_DAMAGE_MODIFIER, 1.375F);
             replaceModifier(modifiers, SharedMonsterAttributes.ATTACK_SPEED, ATTACK_SPEED_MODIFIER, 1);
         }
 
@@ -68,3 +68,4 @@ public class Bat extends ItemSword {
         ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
     }
 }
+

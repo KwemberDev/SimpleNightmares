@@ -7,6 +7,7 @@ import kwemsmod.blocks.renderer.TileEntityWoodenCanopyBed;
 import kwemsmod.config.Config;
 import kwemsmod.items.Bat;
 import kwemsmod.items.DemonWand;
+import kwemsmod.items.NailBat;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.config.Configuration;
@@ -18,6 +19,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.block.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import javax.tools.Tool;
 import java.io.File;
 
 @Mod.EventBusSubscriber
@@ -52,7 +55,8 @@ public class CommonProxy {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new ItemBlock(ModBlocks.manacrystalblock).setRegistryName(ModBlocks.manacrystalblock.getRegistryName()));
         event.getRegistry().register(new DemonWand());
-        event.getRegistry().register(new Bat(Item.ToolMaterial.STONE));
+        event.getRegistry().register(new Bat(Item.ToolMaterial.WOOD));
         event.getRegistry().register(new ItemBlock(ModBlocks.woodencanopybed).setRegistryName(ModBlocks.woodencanopybed.getRegistryName()));
+        event.getRegistry().register(new NailBat(Item.ToolMaterial.STONE));
     }
 }
