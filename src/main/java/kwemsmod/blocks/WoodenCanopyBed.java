@@ -1,7 +1,7 @@
 package kwemsmod.blocks;
 
 import kwemsmod.KwemsMod;
-import kwemsmod.blocks.renderer.TileEntityDemonBed;
+import kwemsmod.blocks.renderer.TileEntityWoodenCanopyBed;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -26,13 +26,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.Nullable;
 
-public class DemonBed extends BlockBed {
-    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 1.5625F, 1);
-    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,1.5625F,1);
-    public DemonBed() {
+public class WoodenCanopyBed extends BlockBed {
+    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.4375F, 1);
+    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.4375F,1);
+    public WoodenCanopyBed() {
         super();
-        setTranslationKey(KwemsMod.MODID + ".demonbed");     // Used for localization and naming (en_us.lang)
-        setRegistryName("demonbed");        // The unique name (within the mod) that identifies this block
+        setTranslationKey(KwemsMod.MODID + ".woodencanopybed");     // Used for localization and naming (en_us.lang)
+        setRegistryName("woodencanopybed");        // The unique name (within the mod) that identifies this block
         this.setCreativeTab(CreativeTabs.MISC);
     }
     @SideOnly(Side.CLIENT)
@@ -58,7 +58,7 @@ public class DemonBed extends BlockBed {
     }
     @Override
     public TileEntity createNewTileEntity(final World worldIn, final int meta) {
-        return new TileEntityDemonBed();
+        return new TileEntityWoodenCanopyBed();
     }
     @Override
     public EnumBlockRenderType getRenderType(IBlockState state) {

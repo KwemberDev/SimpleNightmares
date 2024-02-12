@@ -1,9 +1,6 @@
 package kwemsmod;
 
-import kwemsmod.blocks.renderer.TileEntityDemonBedRenderer;
-import kwemsmod.blocks.renderer.TileEntityDemonBed;
 import kwemsmod.proxy.CommonProxy;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

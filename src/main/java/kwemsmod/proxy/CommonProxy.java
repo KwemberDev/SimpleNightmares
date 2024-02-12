@@ -1,9 +1,9 @@
 package kwemsmod.proxy;
 
 import kwemsmod.ModBlocks;
-import kwemsmod.blocks.DemonBed;
+import kwemsmod.blocks.WoodenCanopyBed;
 import kwemsmod.blocks.ManaCrystalBlock;
-import kwemsmod.blocks.renderer.TileEntityDemonBed;
+import kwemsmod.blocks.renderer.TileEntityWoodenCanopyBed;
 import kwemsmod.config.Config;
 import kwemsmod.items.Bat;
 import kwemsmod.items.DemonWand;
@@ -44,8 +44,8 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new ManaCrystalBlock());
-        event.getRegistry().register(new DemonBed());
-        GameRegistry.registerTileEntity(TileEntityDemonBed.class, DemonBed.PART.getName());
+        event.getRegistry().register(new WoodenCanopyBed());
+        GameRegistry.registerTileEntity(TileEntityWoodenCanopyBed.class, WoodenCanopyBed.PART.getName());
     }
 
     @SubscribeEvent
@@ -53,6 +53,6 @@ public class CommonProxy {
         event.getRegistry().register(new ItemBlock(ModBlocks.manacrystalblock).setRegistryName(ModBlocks.manacrystalblock.getRegistryName()));
         event.getRegistry().register(new DemonWand());
         event.getRegistry().register(new Bat(Item.ToolMaterial.STONE));
-        event.getRegistry().register(new ItemBlock(ModBlocks.demonbed).setRegistryName(ModBlocks.demonbed.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.woodencanopybed).setRegistryName(ModBlocks.woodencanopybed.getRegistryName()));
     }
 }
