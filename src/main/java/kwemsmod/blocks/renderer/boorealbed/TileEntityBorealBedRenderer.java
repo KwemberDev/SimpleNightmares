@@ -1,4 +1,4 @@
-package kwemsmod.blocks.renderer;
+package kwemsmod.blocks.renderer.boorealbed;
 
 import net.minecraft.client.model.ModelBed;
 import net.minecraft.client.renderer.GlStateManager;
@@ -8,12 +8,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class TileEntityWoodenCanopyBedRenderer extends TileEntitySpecialRenderer<TileEntityWoodenCanopyBed> {
+public class TileEntityBorealBedRenderer extends TileEntitySpecialRenderer<TileEntityBorealBed> {
     private final ModelBed model = new ModelBed();
-    private static final ResourceLocation TEXTURE = new ResourceLocation("kwemsmod", "textures/blocks/woodencanopybedbase.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("kwemsmod", "textures/blocks/borealbedbase.png");
 
     @Override
-    public void render(TileEntityWoodenCanopyBed te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+    public void render(TileEntityBorealBed te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         if (te.getWorld() != null) {
             this.bindTexture(TEXTURE);
             GlStateManager.pushMatrix();

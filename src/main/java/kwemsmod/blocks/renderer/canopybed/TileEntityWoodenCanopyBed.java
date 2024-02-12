@@ -1,4 +1,4 @@
-package kwemsmod.blocks.renderer;
+package kwemsmod.blocks.renderer.canopybed;
 
 import net.minecraft.tileentity.TileEntity;
 
