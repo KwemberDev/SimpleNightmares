@@ -1,7 +1,6 @@
-package kwemsmod.blocks;
+package kwemsmod.blocks.renderer.boorealbed;
 
 import kwemsmod.KwemsMod;
-import kwemsmod.blocks.renderer.canopybed.TileEntityWoodenCanopyBed;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -26,13 +25,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.Nullable;
 
-public class WoodenCanopyBed extends BlockBed {
-    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.4375F, 1);
-    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.4375F,1);
-    public WoodenCanopyBed() {
+public class BorealBed extends BlockBed {
+    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.375F, 1);
+    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.375F,1);
+    public BorealBed() {
         super();
-        setTranslationKey(KwemsMod.MODID + ".woodencanopybed");     // Used for localization and naming (en_us.lang)
-        setRegistryName("woodencanopybed");        // The unique name (within the mod) that identifies this block
+        setTranslationKey(KwemsMod.MODID + ".borealbed");     // Used for localization and naming (en_us.lang)
+        setRegistryName("borealbed");        // The unique name (within the mod) that identifies this block
         this.setCreativeTab(CreativeTabs.MISC);
     }
     @SideOnly(Side.CLIENT)
@@ -58,7 +57,7 @@ public class WoodenCanopyBed extends BlockBed {
     }
     @Override
     public TileEntity createNewTileEntity(final World worldIn, final int meta) {
-        return new TileEntityWoodenCanopyBed();
+        return new TileEntityBorealBed();
     }
     @Override
     public EnumBlockRenderType getRenderType(IBlockState state) {

@@ -26,6 +26,4 @@ public class EventHandler {
             player.setPosition(player.posX, desiredY, player.posZ);
         }
     }
-
-
 }
