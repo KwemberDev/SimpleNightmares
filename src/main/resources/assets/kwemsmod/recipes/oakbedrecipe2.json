@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "kwemsmod:oakbed"
+  },
+  "pattern": [
+    "www",
+    "ddd",
+    "   "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:log",
+      "data": 0
+    },
+    "w": {
+      "item": "quark:quilted_wool",
+      "data": 0
+    }
+  }
+}

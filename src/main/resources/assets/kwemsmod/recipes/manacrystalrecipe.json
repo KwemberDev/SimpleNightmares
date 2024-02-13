@@ -10,7 +10,7 @@
   "type": "forge:ore_shaped",
   "key": {
     "d": {
-      "item": "minecraft:dirt",
+      "item": "xat:mana_crystal",
       "data": 0
     }
   }
