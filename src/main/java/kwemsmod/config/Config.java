@@ -11,8 +11,6 @@ public class Config {
     private static final String CATEGORY_DIMENSIONS = "dimensions";
 
     // This values below you can access elsewhere in your mod:
-    public static boolean isThisAGoodTutorial = true;
-    public static String yourRealName = "Steve";
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=north,occupied=false,part=head": {
+      "model": "kwemsmod:greenoakbedhead",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=head": {
+      "model": "kwemsmod:greenoakbedhead"
+    },
+    "facing=west,occupied=false,part=head": {
+      "model": "kwemsmod:greenoakbedhead",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=head": {
+      "model": "kwemsmod:greenoakbedhead",
+      "y": -90
+    },
+    "facing=north,occupied=true,part=head": {
+      "model": "kwemsmod:greenoakbedhead",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=head": {
+      "model": "kwemsmod:greenoakbedhead"
+    },
+    "facing=west,occupied=true,part=head": {
+      "model": "kwemsmod:greenoakbedhead",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=head": {
+      "model": "kwemsmod:greenoakbedhead",
+      "y": -90
+    },
+    "facing=north,occupied=false,part=foot": {
+      "model": "kwemsmod:greenoakbedbase",
+      "y": 180
+    },
+    "facing=south,occupied=false,part=foot": {
+      "model": "kwemsmod:greenoakbedbase"
+    },
+    "facing=west,occupied=false,part=foot": {
+      "model": "kwemsmod:greenoakbedbase",
+      "y": 90
+    },
+    "facing=east,occupied=false,part=foot": {
+      "model": "kwemsmod:greenoakbedbase",
+      "y": -90
+    },
+    "facing=north,occupied=true,part=foot": {
+      "model": "kwemsmod:greenoakbedbase",
+      "y": 180
+    },
+    "facing=south,occupied=true,part=foot": {
+      "model": "kwemsmod:greenoakbedbase"
+    },
+    "facing=west,occupied=true,part=foot": {
+      "model": "kwemsmod:greenoakbedbase",
+      "y": 90
+    },
+    "facing=east,occupied=true,part=foot": {
+      "model": "kwemsmod:greenoakbedbase",
+      "y": -90
+    }
+  }
+}

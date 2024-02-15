@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "kwemsmod:blocks/oakbed",
-		"particle": "kwemsmod:blocks/oakbed"
+		"0": "kwemsmod:blocks/greenoakbed",
+		"particle": "kwemsmod:blocks/greenoakbed"
 	},
 	"elements": [
 		{

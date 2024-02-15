@@ -23,4 +23,5 @@ public class ModItems {
         bat.initModel();
         nailbat.initModel();
     }
+
 }

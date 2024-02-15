@@ -2,14 +2,13 @@ package kwemsmod.proxy;
 
 import kwemsmod.ModBlocks;
 import kwemsmod.ModItems;
-import kwemsmod.blocks.renderer.OakBed.TileEntityOakBed;
-import kwemsmod.blocks.renderer.OakBed.TileEntityOakBedRenderer;
-import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBed;
-import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBedRenderer;
-import kwemsmod.blocks.renderer.canopybed.TileEntityWoodenCanopyBed;
-import kwemsmod.blocks.renderer.canopybed.TileEntityWoodenCanopyBedRenderer;
+import kwemsmod.blocks.renderer.OakBed.OakBed;
+import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.EnumDyeColor;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -30,8 +29,5 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public void registerRenderers() {
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWoodenCanopyBed.class, new TileEntityWoodenCanopyBedRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBorealBed.class, new TileEntityBorealBedRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityOakBed.class, new TileEntityOakBedRenderer());
     }
 }

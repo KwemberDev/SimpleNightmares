@@ -4,9 +4,13 @@ import kwemsmod.blocks.renderer.OakBed.OakBed;
 import kwemsmod.blocks.renderer.boorealbed.BorealBed;
 import kwemsmod.blocks.renderer.canopybed.WoodenCanopyBed;
 import kwemsmod.blocks.ManaCrystalBlock;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModBlocks {
 
@@ -23,7 +27,6 @@ public class ModBlocks {
     public static void initModels() {
         manacrystalblock.initModel();
         woodencanopybed.initModel();
-        borealbed.initModel();
-        oakbed.initModel();
+        borealbed.initModel();;
     }
 }

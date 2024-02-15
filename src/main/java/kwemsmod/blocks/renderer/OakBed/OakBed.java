@@ -1,7 +1,9 @@
 package kwemsmod.blocks.renderer.OakBed;
 
 import kwemsmod.KwemsMod;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
+import net.minecraft.block.material.MapColor;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,9 +11,12 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityBed;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -25,13 +30,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class OakBed extends BlockBed {
     private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.4375F, 1);
     private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.4375F,1);
-    public OakBed() {
+    public OakBed(EnumDyeColor color) {
         super();
-        setTranslationKey(KwemsMod.MODID + ".oakbed");     // Used for localization and naming (en_us.lang)
-        setRegistryName("oakbed");        // The unique name (within the mod) that identifies this block
         this.setCreativeTab(CreativeTabs.MISC);
     }
     @SideOnly(Side.CLIENT)
@@ -111,5 +117,111 @@ public class OakBed extends BlockBed {
                 box.maxY,
                 center.z + (box.maxX - center.x) * Math.sin(angle) + (box.maxZ - center.z) * Math.cos(angle)
         );
+    }
+    // for colors
+
+    @Override
+    public MapColor getMapColor(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+    {
+        if (state.getValue(PART) == BlockBed.EnumPartType.FOOT)
+        {
+            TileEntity tileentity = worldIn.getTileEntity(pos);
+
+            if (tileentity instanceof TileEntityBed)
+            {
+                EnumDyeColor enumdyecolor = ((TileEntityBed)tileentity).getColor();
+                return MapColor.getBlockColor(enumdyecolor);
+            }
+        }
+
+        return MapColor.CLOTH;
+    }
+    @Override
+    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state)
+    {
+        BlockPos blockpos = pos;
+
+        if (state.getValue(PART) == BlockBed.EnumPartType.FOOT)
+        {
+            blockpos = pos.offset((EnumFacing)state.getValue(FACING));
+        }
+
+        TileEntity tileentity = worldIn.getTileEntity(blockpos);
+        EnumDyeColor enumdyecolor = tileentity instanceof TileEntityBed ? ((TileEntityBed)tileentity).getColor() : EnumDyeColor.RED;
+        return new ItemStack(Items.BED, 1, enumdyecolor.getMetadata());
+    }
+    @Override
+    public void onBlockHarvested(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player)
+    {
+        if (player.capabilities.isCreativeMode && state.getValue(PART) == BlockBed.EnumPartType.FOOT)
+        {
+            BlockPos blockpos = pos.offset((EnumFacing)state.getValue(FACING));
+
+            if (worldIn.getBlockState(blockpos).getBlock() == this)
+            {
+                worldIn.setBlockToAir(blockpos);
+            }
+        }
+    }
+    @Override
+    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te, ItemStack stack)
+    {
+        if (state.getValue(PART) == BlockBed.EnumPartType.HEAD && te instanceof TileEntityBed)
+        {
+            TileEntityBed tileentitybed = (TileEntityBed)te;
+            ItemStack itemstack = tileentitybed.getItemStack();
+            spawnAsEntity(worldIn, pos, itemstack);
+        }
+        else
+        {
+            super.harvestBlock(worldIn, player, pos, state, (TileEntity)null, stack);
+        }
+    }
+    @Override
+    public IBlockState getStateFromMeta(int meta)
+    {
+        EnumFacing enumfacing = EnumFacing.byHorizontalIndex(meta);
+        return (meta & 8) > 0 ? this.getDefaultState().withProperty(PART, BlockBed.EnumPartType.HEAD).withProperty(FACING, enumfacing).withProperty(OCCUPIED, Boolean.valueOf((meta & 4) > 0)) : this.getDefaultState().withProperty(PART, BlockBed.EnumPartType.FOOT).withProperty(FACING, enumfacing);
+    }
+
+    @Override
+    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
+    {
+        if (state.getValue(PART) == BlockBed.EnumPartType.FOOT)
+        {
+            IBlockState iblockstate = worldIn.getBlockState(pos.offset((EnumFacing)state.getValue(FACING)));
+
+            if (iblockstate.getBlock() == this)
+            {
+                state = state.withProperty(OCCUPIED, iblockstate.getValue(OCCUPIED));
+            }
+        }
+
+        return state;
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state)
+    {
+        int i = 0;
+        i = i | ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+
+        if (state.getValue(PART) == BlockBed.EnumPartType.HEAD)
+        {
+            i |= 8;
+
+            if (((Boolean)state.getValue(OCCUPIED)).booleanValue())
+            {
+                i |= 4;
+            }
+        }
+
+        return i;
+    }
+
+    public static final Map<EnumDyeColor, Block> BEDS = new HashMap<>();
+
+    public static Block get(EnumDyeColor color) {
+        return BEDS.get(color);
     }
 }
