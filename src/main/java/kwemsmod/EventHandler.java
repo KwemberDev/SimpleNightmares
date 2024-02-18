@@ -1,5 +1,7 @@
 package kwemsmod;
 
+import kwemsmod.blocks.renderer.OakBed.OakBed;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -15,12 +17,18 @@ public class EventHandler {
 
         EntityPlayer player = event.player;
         if (player.isPlayerSleeping()) {
+            // Get the bed's block state
+            IBlockState bedBlockState = player.world.getBlockState(player.bedLocation);
+
+            // Check if the bed is a custom bed from your mod
+            if (!(bedBlockState.getBlock() instanceof OakBed)) return;
+
             // Get the bed's bounding box
-            AxisAlignedBB bedBoundingBox = player.world.getBlockState(player.bedLocation).getBoundingBox(player.world, player.bedLocation);
+            AxisAlignedBB bedBoundingBox = bedBlockState.getBoundingBox(player.world, player.bedLocation);
 
             // Calculate the desired Y position
             double bedTop = bedBoundingBox.maxY + player.bedLocation.getY();
-            double desiredY = bedTop;
+            double desiredY = bedTop+0.125D;
 
             // Set the player's position
             player.setPosition(player.posX, desiredY, player.posZ);

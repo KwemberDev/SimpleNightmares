@@ -22,4 +22,5 @@ tile.kwemsmod.brown_oakbed.name=Oak Bed
 tile.kwemsmod.red_oakbed.name=Oak Bed
 tile.kwemsmod.green_oakbed.name=Oak Bed
 tile.kwemsmod.black_oakbed.name=Oak Bed
-tile.kwemsmod.light_blue.name=Oak bed
+tile.kwemsmod.light_blue_oakbed.name=Oak Bed
+tile.kwemsmod.wroughtironbed.name=Wrought Iron Bed
