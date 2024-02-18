@@ -1,16 +1,15 @@
 package kwemsmod;
 
-import kwemsmod.blocks.renderer.OakBed.OakBed;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
 import net.minecraft.entity.player.EntityPlayer;
+import kwemsmod.config.*;
 
 @EventBusSubscriber(modid = KwemsMod.MODID)
 public class EventHandler {
-
     @SubscribeEvent
     public static void onPlayerTick(PlayerTickEvent event) {
         if (event.phase != PlayerTickEvent.Phase.END) return;
@@ -21,7 +20,7 @@ public class EventHandler {
             IBlockState bedBlockState = player.world.getBlockState(player.bedLocation);
 
             // Check if the bed is a custom bed from your mod
-            if (!(bedBlockState.getBlock() instanceof OakBed)) return;
+            if (!Config.customBedBlocks.contains(bedBlockState.getBlock().getRegistryName().toString())) return;
 
             // Get the bed's bounding box
             AxisAlignedBB bedBoundingBox = bedBlockState.getBoundingBox(player.world, player.bedLocation);

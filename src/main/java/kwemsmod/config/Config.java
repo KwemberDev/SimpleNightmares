@@ -5,12 +5,18 @@ import kwemsmod.proxy.CommonProxy;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Level;
 
+import net.minecraftforge.common.config.Configuration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Config {
 
     private static final String CATEGORY_GENERAL = "general";
     private static final String CATEGORY_DIMENSIONS = "dimensions";
 
     // This values below you can access elsewhere in your mod:
+    public static List<String> customBedBlocks = new ArrayList<>();
 
     // Call this from CommonProxy.preInit(). It will create our config if it doesn't
     // exist yet and read the values if it does exist.
@@ -31,7 +37,25 @@ public class Config {
 
     private static void initGeneralConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
-        // cfg.getBoolean() will get the value in the config if it is already specified there. If not it will create the value.
+        customBedBlocks = Arrays.asList(cfg.getStringList("customBedBlocks", CATEGORY_GENERAL, new String[] {
+                "kwemsmod:black_oakbed",
+                "kwemsmod:blue_oakbed",
+                "kwemsmod:borealbed",
+                "kwemsmod:brown_oakbed",
+                "kwemsmod:cyan_oakbed",
+                "kwemsmod:gray_oakbed",
+                "kwemsmod:green_oakbed",
+                "kwemsmod:light_blue_oakbed",
+                "kwemsmod:lime_oakbed",
+                "kwemsmod:magenta_oakbed",
+                "kwemsmod:orange_oakbed",
+                "kwemsmod:pink_oakbed",
+                "kwemsmod:purple_oakbed",
+                "kwemsmod:red_oakbed",
+                "kwemsmod:silver_oakbed",
+                "kwemsmod:white_oakbed",
+                "kwemsmod:yellow_oakbed"
+        }, "Names of the custom bed blocks"));
     }
 
     private static void initDimensionConfig(Configuration cfg) {
