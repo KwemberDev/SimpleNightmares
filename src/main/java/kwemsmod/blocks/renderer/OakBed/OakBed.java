@@ -4,6 +4,7 @@ import kwemsmod.KwemsMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBed;
 import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -19,6 +20,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityBed;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -36,7 +38,7 @@ import java.util.Map;
 public class OakBed extends BlockBed {
     private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.4375F, 1);
     private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.4375F,1);
-    public OakBed(EnumDyeColor color) {
+    public OakBed() {
         super();
         this.setCreativeTab(CreativeTabs.MISC);
     }
@@ -176,47 +178,6 @@ public class OakBed extends BlockBed {
         {
             super.harvestBlock(worldIn, player, pos, state, (TileEntity)null, stack);
         }
-    }
-    @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
-        EnumFacing enumfacing = EnumFacing.byHorizontalIndex(meta);
-        return (meta & 8) > 0 ? this.getDefaultState().withProperty(PART, BlockBed.EnumPartType.HEAD).withProperty(FACING, enumfacing).withProperty(OCCUPIED, Boolean.valueOf((meta & 4) > 0)) : this.getDefaultState().withProperty(PART, BlockBed.EnumPartType.FOOT).withProperty(FACING, enumfacing);
-    }
-
-    @Override
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos)
-    {
-        if (state.getValue(PART) == BlockBed.EnumPartType.FOOT)
-        {
-            IBlockState iblockstate = worldIn.getBlockState(pos.offset((EnumFacing)state.getValue(FACING)));
-
-            if (iblockstate.getBlock() == this)
-            {
-                state = state.withProperty(OCCUPIED, iblockstate.getValue(OCCUPIED));
-            }
-        }
-
-        return state;
-    }
-
-    @Override
-    public int getMetaFromState(IBlockState state)
-    {
-        int i = 0;
-        i = i | ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
-
-        if (state.getValue(PART) == BlockBed.EnumPartType.HEAD)
-        {
-            i |= 8;
-
-            if (((Boolean)state.getValue(OCCUPIED)).booleanValue())
-            {
-                i |= 4;
-            }
-        }
-
-        return i;
     }
 
     public static final Map<EnumDyeColor, Block> BEDS = new HashMap<>();

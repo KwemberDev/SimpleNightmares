@@ -9,6 +9,8 @@ import kwemsmod.blocks.renderer.canopybed.WoodenCanopyBed;
 import kwemsmod.blocks.ManaCrystalBlock;
 import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBed;
 import kwemsmod.blocks.renderer.canopybed.TileEntityWoodenCanopyBed;
+import kwemsmod.blocks.renderer.wroughtironbed.TileEntityWroughIronBed;
+import kwemsmod.blocks.renderer.wroughtironbed.WroughtIronBed;
 import kwemsmod.config.Config;
 import kwemsmod.items.Bat;
 import kwemsmod.items.DemonWand;
@@ -18,6 +20,7 @@ import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.event.RegistryEvent;
@@ -59,10 +62,13 @@ public class CommonProxy {
         event.getRegistry().register(new ManaCrystalBlock());
         event.getRegistry().register(new WoodenCanopyBed());
         event.getRegistry().register(new BorealBed());
+        event.getRegistry().register(new WroughtIronBed());
 
         for (EnumDyeColor color : EnumDyeColor.values()) {
-            Block bed = new OakBed(color).setRegistryName(MODID, color.getName() + "_oakbed");
+            Block bed = new OakBed();
+            bed.setTranslationKey(MODID + "." + color.getName() + "_oakbed");
             OakBed.BEDS.put(color, bed);
+            bed.setRegistryName(MODID, color.getName() + "_oakbed");
             event.getRegistry().registerAll(bed);
         }
 
@@ -71,6 +77,7 @@ public class CommonProxy {
         GameRegistry.registerTileEntity(TileEntityWoodenCanopyBed.class, MODID + ".WoodenCanopyBed");
         GameRegistry.registerTileEntity(TileEntityBorealBed.class, MODID + ".BorealBed");
         GameRegistry.registerTileEntity(TileEntityOakBed.class, MODID + ".OakBed");
+        GameRegistry.registerTileEntity(TileEntityWroughIronBed.class, MODID + ".WroughtIronBed");
     }
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -80,8 +87,10 @@ public class CommonProxy {
         event.getRegistry().register(new ItemBlock(ModBlocks.woodencanopybed).setRegistryName(ModBlocks.woodencanopybed.getRegistryName()));
         event.getRegistry().register(new NailBat(Item.ToolMaterial.STONE));
         event.getRegistry().register(new ItemBlock(ModBlocks.borealbed).setRegistryName(ModBlocks.borealbed.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.wroughtironbed).setRegistryName(ModBlocks.wroughtironbed.getRegistryName()));
         for (EnumDyeColor color : EnumDyeColor.values()) {
-            event.getRegistry().registerAll(new ItemBlock(OakBed.get(color)).setRegistryName(MODID, color.getName() + "_oakbed"));
+            Block bed = OakBed.BEDS.get(color);
+            event.getRegistry().register(new ItemBlock(bed).setRegistryName(bed.getRegistryName()));
         }
     }
 }

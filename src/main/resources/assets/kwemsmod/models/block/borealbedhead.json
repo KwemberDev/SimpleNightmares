@@ -3,7 +3,7 @@
 	"texture_size": [128, 128],
 	"textures": {
 		"0": "kwemsmod:blocks/borealbed",
-		"particle": "kwemsmod:blocks/borealbed"
+		"particle": "blocks/planks_spruce"
 	},
 	"elements": [
 		{

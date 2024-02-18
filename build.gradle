@@ -26,7 +26,7 @@ minecraft {
 
     runs {
         client {
-            args "--username=InDev"
+            args "--username=Notch"
 
             workingDirectory project.file('run')
 

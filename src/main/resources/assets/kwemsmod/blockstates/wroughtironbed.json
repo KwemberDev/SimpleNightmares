@@ -1,0 +1,20 @@
+{
+  "variants":{
+    "facing=north,occupied=false,part=head": { "model": "kwemsmod:wroughtironbedhead", "y": 180 },
+    "facing=south,occupied=false,part=head": { "model": "kwemsmod:wroughtironbedhead"},
+    "facing=west,occupied=false,part=head": { "model": "kwemsmod:wroughtironbedhead", "y": 90 },
+    "facing=east,occupied=false,part=head": { "model": "kwemsmod:wroughtironbedhead", "y": -90},
+    "facing=north,occupied=true,part=head": { "model": "kwemsmod:wroughtironbedhead", "y": 180 },
+    "facing=south,occupied=true,part=head": { "model": "kwemsmod:wroughtironbedhead"},
+    "facing=west,occupied=true,part=head": { "model": "kwemsmod:wroughtironbedhead", "y": 90 },
+    "facing=east,occupied=true,part=head": { "model": "kwemsmod:wroughtironbedhead", "y": -90},
+    "facing=north,occupied=false,part=foot": { "model": "kwemsmod:wroughtironbedbase", "y": 180 },
+    "facing=south,occupied=false,part=foot": { "model": "kwemsmod:wroughtironbedbase"},
+    "facing=west,occupied=false,part=foot": { "model": "kwemsmod:wroughtironbedbase", "y": 90 },
+    "facing=east,occupied=false,part=foot": { "model": "kwemsmod:wroughtironbedbase", "y": -90},
+    "facing=north,occupied=true,part=foot": { "model": "kwemsmod:wroughtironbedbase", "y": 180 },
+    "facing=south,occupied=true,part=foot": { "model": "kwemsmod:wroughtironbedbase"},
+    "facing=west,occupied=true,part=foot": { "model": "kwemsmod:wroughtironbedbase", "y": 90 },
+    "facing=east,occupied=true,part=foot": { "model": "kwemsmod:wroughtironbedbase", "y": -90}
+  }
+}

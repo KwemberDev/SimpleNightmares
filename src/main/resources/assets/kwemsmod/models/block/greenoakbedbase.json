@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "kwemsmod:blocks/greenoakbed",
-		"particle": "kwemsmod:blocks/greenoakbed"
+		"particle": "blocks/planks_oak"
 	},
 	"elements": [
 		{
