@@ -4,6 +4,7 @@ import kwemsmod.blocks.renderer.OakBed.OakBed;
 import kwemsmod.blocks.renderer.boorealbed.BorealBed;
 import kwemsmod.blocks.renderer.canopybed.WoodenCanopyBed;
 import kwemsmod.blocks.ManaCrystalBlock;
+import kwemsmod.blocks.renderer.wroughtironbed.WroughtCincinnasiteBed;
 import kwemsmod.blocks.renderer.wroughtironbed.WroughtIronBed;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -25,6 +26,8 @@ public class ModBlocks {
     public static OakBed oakbed;
     @GameRegistry.ObjectHolder("KwemsMod:WroughtIronBed")
     public static WroughtIronBed wroughtironbed;
+    @GameRegistry.ObjectHolder("kwemsMod:WroughtCincinnasiteBed")
+    public static WroughtCincinnasiteBed wroughtCincinnasiteBed;
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
@@ -32,5 +35,6 @@ public class ModBlocks {
         woodencanopybed.initModel();
         borealbed.initModel();
         wroughtironbed.initModel();
+        wroughtCincinnasiteBed.initModel();
     }
 }

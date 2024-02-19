@@ -55,7 +55,7 @@ public class Config {
                 "kwemsmod:silver_oakbed",
                 "kwemsmod:white_oakbed",
                 "kwemsmod:yellow_oakbed"
-        }, "Names of the custom bed blocks"));
+        }, "Names of the custom bed blocks affected by this mods custom sleep positioning:"));
     }
 
     private static void initDimensionConfig(Configuration cfg) {
