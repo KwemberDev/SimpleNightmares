@@ -9,11 +9,14 @@ import kwemsmod.blocks.renderer.canopybed.WoodenCanopyBed;
 import kwemsmod.blocks.ManaCrystalBlock;
 import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBed;
 import kwemsmod.blocks.renderer.canopybed.TileEntityWoodenCanopyBed;
-import kwemsmod.blocks.renderer.wroughtironbed.TileEntityWroughtCincinnasiteBed;
-import kwemsmod.blocks.renderer.wroughtironbed.TileEntityWroughtIronBed;
-import kwemsmod.blocks.renderer.wroughtironbed.WroughtCincinnasiteBed;
-import kwemsmod.blocks.renderer.wroughtironbed.WroughtIronBed;
+import kwemsmod.blocks.renderer.lycanitebeds.DemonBed;
+import kwemsmod.blocks.renderer.lycanitebeds.TileEntityDemonBed;
+import kwemsmod.blocks.renderer.wroughtbeds.TileEntityWroughtCincinnasiteBed;
+import kwemsmod.blocks.renderer.wroughtbeds.TileEntityWroughtIronBed;
+import kwemsmod.blocks.renderer.wroughtbeds.WroughtCincinnasiteBed;
+import kwemsmod.blocks.renderer.wroughtbeds.WroughtIronBed;
 import kwemsmod.config.Config;
+import kwemsmod.items.BanHammer;
 import kwemsmod.items.Bat;
 import kwemsmod.items.DemonWand;
 import kwemsmod.items.NailBat;
@@ -62,6 +65,7 @@ public class CommonProxy {
         event.getRegistry().register(new BorealBed());
         event.getRegistry().register(new WroughtIronBed());
         event.getRegistry().register(new WroughtCincinnasiteBed());
+        event.getRegistry().register(new DemonBed());
 
         for (EnumDyeColor color : EnumDyeColor.values()) {
             Block bed = new OakBed();
@@ -78,6 +82,7 @@ public class CommonProxy {
         GameRegistry.registerTileEntity(TileEntityOakBed.class, MODID + ".OakBed");
         GameRegistry.registerTileEntity(TileEntityWroughtIronBed.class, MODID + ".WroughtIronBed");
         GameRegistry.registerTileEntity(TileEntityWroughtCincinnasiteBed.class, MODID + ".wroughtcincinnasitebed");
+        GameRegistry.registerTileEntity(TileEntityDemonBed.class, MODID + ".demonbed");
     }
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -89,6 +94,9 @@ public class CommonProxy {
         event.getRegistry().register(new CustomItemBlock(ModBlocks.borealbed).setRegistryName(ModBlocks.borealbed.getRegistryName()));
         event.getRegistry().register(new CustomItemBlock(ModBlocks.wroughtironbed).setRegistryName(ModBlocks.wroughtironbed.getRegistryName()));
         event.getRegistry().register(new CustomItemBlock(ModBlocks.wroughtCincinnasiteBed).setRegistryName(ModBlocks.wroughtCincinnasiteBed.getRegistryName()));
+        event.getRegistry().register(new CustomItemBlock(ModBlocks.demonbed).setRegistryName(ModBlocks.demonbed.getRegistryName()));
+        event.getRegistry().register(new BanHammer());
+
         for (EnumDyeColor color : EnumDyeColor.values()) {
             Block bed = OakBed.BEDS.get(color);
             event.getRegistry().register(new CustomItemBlock(bed).setRegistryName(bed.getRegistryName()));

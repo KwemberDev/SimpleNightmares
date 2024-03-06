@@ -1,4 +1,4 @@
-package kwemsmod.blocks.renderer.wroughtironbed;
+package kwemsmod.blocks.renderer.wroughtbeds;
 
 import kwemsmod.KwemsMod;
 import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBed;

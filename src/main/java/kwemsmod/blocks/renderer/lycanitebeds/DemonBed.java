@@ -1,4 +1,4 @@
-package kwemsmod.blocks.renderer.wroughtironbed;
+package kwemsmod.blocks.renderer.lycanitebeds;
 
 import kwemsmod.KwemsMod;
 import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBed;
@@ -26,13 +26,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.Nullable;
 
-public class WroughtIronBed extends BlockBed {
-    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0.25, 0, 1, 0.5625F, 1);
-    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0.25,0,1,0.5625F,1);
-    public WroughtIronBed() {
+public class DemonBed extends BlockBed {
+    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.5F, 1);
+    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.5F,1);
+    public DemonBed() {
         super();
-        setTranslationKey(KwemsMod.MODID + ".wroughtironbed");     // Used for localization and naming (en_us.lang)
-        setRegistryName("wroughtironbed");        // The unique name (within the mod) that identifies this block
+        setTranslationKey(KwemsMod.MODID + ".demonbed");     // Used for localization and naming (en_us.lang)
+        setRegistryName("demonbed");        // The unique name (within the mod) that identifies this block
         this.setCreativeTab(CreativeTabs.MISC);
     }
     @SideOnly(Side.CLIENT)

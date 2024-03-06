@@ -1,4 +1,4 @@
-package kwemsmod.blocks.renderer.wroughtironbed;
+package kwemsmod.blocks.renderer.wroughtbeds;
 
 import net.minecraft.tileentity.TileEntity;
 

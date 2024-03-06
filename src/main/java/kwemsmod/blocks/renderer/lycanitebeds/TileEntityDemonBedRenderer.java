@@ -1,5 +1,6 @@
-package kwemsmod.blocks.renderer.wroughtironbed;
+package kwemsmod.blocks.renderer.lycanitebeds;
 
+import kwemsmod.blocks.renderer.boorealbed.TileEntityBorealBed;
 import net.minecraft.client.model.ModelBed;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
@@ -8,12 +9,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class TileEntityWroughtCincinnasiteBedRenderer extends TileEntitySpecialRenderer<TileEntityWroughtCincinnasiteBed> {
+public class TileEntityDemonBedRenderer extends TileEntitySpecialRenderer<TileEntityDemonBed> {
     private final ModelBed model = new ModelBed();
-    private static final ResourceLocation TEXTURE = new ResourceLocation("kwemsmod", "textures/blocks/wroughtcincinnasitebed.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation("kwemsmod", "textures/blocks/demonbed.png");
 
     @Override
-    public void render(TileEntityWroughtCincinnasiteBed te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+    public void render(TileEntityDemonBed te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         if (te.getWorld() != null) {
             this.bindTexture(TEXTURE);
             GlStateManager.pushMatrix();

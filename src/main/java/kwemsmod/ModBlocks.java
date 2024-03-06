@@ -4,15 +4,13 @@ import kwemsmod.blocks.renderer.OakBed.OakBed;
 import kwemsmod.blocks.renderer.boorealbed.BorealBed;
 import kwemsmod.blocks.renderer.canopybed.WoodenCanopyBed;
 import kwemsmod.blocks.ManaCrystalBlock;
-import kwemsmod.blocks.renderer.wroughtironbed.WroughtCincinnasiteBed;
-import kwemsmod.blocks.renderer.wroughtironbed.WroughtIronBed;
-import net.minecraft.item.EnumDyeColor;
+import kwemsmod.blocks.renderer.lycanitebeds.DemonBed;
+import kwemsmod.blocks.renderer.wroughtbeds.WroughtCincinnasiteBed;
+import kwemsmod.blocks.renderer.wroughtbeds.WroughtIronBed;
+import kwemsmod.items.BanHammer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class ModBlocks {
 
@@ -28,6 +26,10 @@ public class ModBlocks {
     public static WroughtIronBed wroughtironbed;
     @GameRegistry.ObjectHolder("kwemsMod:WroughtCincinnasiteBed")
     public static WroughtCincinnasiteBed wroughtCincinnasiteBed;
+    @GameRegistry.ObjectHolder("KwemsMod:DemonBed")
+    public static DemonBed demonbed;
+    @GameRegistry.ObjectHolder("KwemsMod:BanHammer")
+    public static BanHammer banHammer;
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
@@ -36,5 +38,7 @@ public class ModBlocks {
         borealbed.initModel();
         wroughtironbed.initModel();
         wroughtCincinnasiteBed.initModel();
+        demonbed.initModel();
+        banHammer.initModel();
     }
 }
