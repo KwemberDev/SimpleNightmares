@@ -16,10 +16,9 @@ import kwemsmod.blocks.renderer.wroughtbeds.TileEntityWroughtIronBed;
 import kwemsmod.blocks.renderer.wroughtbeds.WroughtCincinnasiteBed;
 import kwemsmod.blocks.renderer.wroughtbeds.WroughtIronBed;
 import kwemsmod.config.Config;
-import kwemsmod.items.BanHammer;
-import kwemsmod.items.Bat;
-import kwemsmod.items.DemonWand;
-import kwemsmod.items.NailBat;
+import kwemsmod.items.*;
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -36,6 +35,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.io.File;
 
 import static kwemsmod.KwemsMod.MODID;
+import static kwemsmod.ModBlocks.auraSword;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
@@ -96,6 +96,7 @@ public class CommonProxy {
         event.getRegistry().register(new CustomItemBlock(ModBlocks.wroughtCincinnasiteBed).setRegistryName(ModBlocks.wroughtCincinnasiteBed.getRegistryName()));
         event.getRegistry().register(new CustomItemBlock(ModBlocks.demonbed).setRegistryName(ModBlocks.demonbed.getRegistryName()));
         event.getRegistry().register(new BanHammer());
+        event.getRegistry().register(new AuraSword(Item.ToolMaterial.DIAMOND));
 
         for (EnumDyeColor color : EnumDyeColor.values()) {
             Block bed = OakBed.BEDS.get(color);
