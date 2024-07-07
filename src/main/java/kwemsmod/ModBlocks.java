@@ -7,8 +7,6 @@ import kwemsmod.blocks.ManaCrystalBlock;
 import kwemsmod.blocks.renderer.lycanitebeds.DemonBed;
 import kwemsmod.blocks.renderer.wroughtbeds.WroughtCincinnasiteBed;
 import kwemsmod.blocks.renderer.wroughtbeds.WroughtIronBed;
-import kwemsmod.items.AuraSword;
-import kwemsmod.items.BanHammer;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -29,11 +27,7 @@ public class ModBlocks {
     public static WroughtCincinnasiteBed wroughtCincinnasiteBed;
     @GameRegistry.ObjectHolder("KwemsMod:DemonBed")
     public static DemonBed demonbed;
-    @GameRegistry.ObjectHolder("KwemsMod:BanHammer")
-    public static BanHammer banHammer;
 
-    @GameRegistry.ObjectHolder("KwemsMod:AuraSword")
-    public static AuraSword auraSword;
 
     @SideOnly(Side.CLIENT)
     public static void initModels() {
@@ -43,7 +37,5 @@ public class ModBlocks {
         wroughtironbed.initModel();
         wroughtCincinnasiteBed.initModel();
         demonbed.initModel();
-        banHammer.initModel();
-        auraSword.initModel();
     }
 }

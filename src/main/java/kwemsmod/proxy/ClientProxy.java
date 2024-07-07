@@ -3,8 +3,6 @@ package kwemsmod.proxy;
 import kwemsmod.ModBlocks;
 import kwemsmod.ModItems;
 import kwemsmod.blocks.renderer.OakBed.OakBed;
-import kwemsmod.items.AuraSword;
-import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
@@ -16,8 +14,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import static kwemsmod.KwemsMod.MODID;
-import static kwemsmod.ModBlocks.auraSword;
-import static kwemsmod.items.AuraSword.TEXTURE_KEY;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy {

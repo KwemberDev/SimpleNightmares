@@ -27,8 +27,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.Nullable;
 
 public class DemonBed extends BlockBed {
-    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.5F, 1);
-    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.5F,1);
+    private static final AxisAlignedBB HEAD_BOUNDING_BOX = new AxisAlignedBB(0, 0, 0, 1, 0.6F, 1);
+    private static final AxisAlignedBB BASE_BOUNDING_BOX = new AxisAlignedBB(0,0,0,1,0.6F,1);
     public DemonBed() {
         super();
         setTranslationKey(KwemsMod.MODID + ".demonbed");     // Used for localization and naming (en_us.lang)
