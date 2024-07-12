@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "normal": { "model": "simplenightmares:dreamcatcher" },
+    "facing=north": { "model": "simplenightmares:dreamcatcher"},
+    "facing=south": { "model": "simplenightmares:dreamcatcher", "y": 180 },
+    "facing=west": { "model": "simplenightmares:dreamcatcher", "y": 270},
+    "facing=east": { "model": "simplenightmares:dreamcatcher", "y": 90}
+  }
+}

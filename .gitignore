@@ -24,3 +24,6 @@ gradle-app.setting
 !src/**/libs/
 **/out/
 !src/**/out/
+/src/main/java/SimpleNightmares/blocks/renderer/lycanitebeds/
+/src/main/java/SimpleNightmares/blocks/renderer/canopybed/
+/src/main/java/SimpleNightmares/blocks/renderer/boorealbed/

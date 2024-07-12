@@ -1,0 +1,20 @@
+{
+  "variants":{
+    "facing=north,occupied=false,part=head": { "model": "simplenightmares:yellowoakbedhead", "y": 180 },
+    "facing=south,occupied=false,part=head": { "model": "simplenightmares:yellowoakbedhead"},
+    "facing=west,occupied=false,part=head": { "model": "simplenightmares:yellowoakbedhead", "y": 90 },
+    "facing=east,occupied=false,part=head": { "model": "simplenightmares:yellowoakbedhead", "y": -90},
+    "facing=north,occupied=true,part=head": { "model": "simplenightmares:yellowoakbedhead", "y": 180 },
+    "facing=south,occupied=true,part=head": { "model": "simplenightmares:yellowoakbedhead"},
+    "facing=west,occupied=true,part=head": { "model": "simplenightmares:yellowoakbedhead", "y": 90 },
+    "facing=east,occupied=true,part=head": { "model": "simplenightmares:yellowoakbedhead", "y": -90},
+    "facing=north,occupied=false,part=foot": { "model": "simplenightmares:yellowoakbedbase", "y": 180 },
+    "facing=south,occupied=false,part=foot": { "model": "simplenightmares:yellowoakbedbase"},
+    "facing=west,occupied=false,part=foot": { "model": "simplenightmares:yellowoakbedbase", "y": 90 },
+    "facing=east,occupied=false,part=foot": { "model": "simplenightmares:yellowoakbedbase", "y": -90},
+    "facing=north,occupied=true,part=foot": { "model": "simplenightmares:yellowoakbedbase", "y": 180 },
+    "facing=south,occupied=true,part=foot": { "model": "simplenightmares:yellowoakbedbase"},
+    "facing=west,occupied=true,part=foot": { "model": "simplenightmares:yellowoakbedbase", "y": 90 },
+    "facing=east,occupied=true,part=foot": { "model": "simplenightmares:yellowoakbedbase", "y": -90}
+  }
+}
