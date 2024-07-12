@@ -1,8 +1,10 @@
 package SimpleNightmares;
 
 import SimpleNightmares.commands.SleepPercentageCommand;
+import SimpleNightmares.config.Config;
 import SimpleNightmares.nightmares.NightEvent;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -11,8 +13,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.PlayerTickEvent;
-import net.minecraft.entity.player.EntityPlayer;
-import SimpleNightmares.config.*;
 
 import java.util.HashMap;
 import java.util.Map;
