@@ -1,22 +1,19 @@
 package SimpleNightmares.nightmares;
 
 import SimpleNightmares.ambush.PotionEffectGroup;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.Random;
 
-import static SimpleNightmares.config.Config.*;
+import static SimpleNightmares.config.Config.potionNightmareEffects;
 
 public class NightmareEffect {
 

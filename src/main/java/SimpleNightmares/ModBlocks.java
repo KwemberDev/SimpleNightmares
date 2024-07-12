@@ -2,9 +2,6 @@ package SimpleNightmares;
 
 import SimpleNightmares.blocks.dreamcatchers.DreamCatcher;
 import SimpleNightmares.blocks.renderer.OakBed.OakBed;
-//import SimpleNightmares.blocks.renderer.boorealbed.BorealBed;
-//import SimpleNightmares.blocks.renderer.canopybed.WoodenCanopyBed;
-//import SimpleNightmares.blocks.renderer.lycanitebeds.DemonBed;
 import SimpleNightmares.blocks.renderer.wroughtbeds.WroughtCincinnasiteBed;
 import SimpleNightmares.blocks.renderer.wroughtbeds.WroughtIronBed;
 import net.minecraftforge.fml.common.registry.GameRegistry;

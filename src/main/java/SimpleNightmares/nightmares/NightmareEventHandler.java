@@ -1,27 +1,23 @@
 package SimpleNightmares.nightmares;
 
-import SimpleNightmares.ModItems;
 import SimpleNightmares.blocks.dreamcatchers.DreamCatcher;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.MobEffects;
-import net.minecraft.item.ItemStack;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldProvider;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.Random;
 
-import static SimpleNightmares.EventHandler.sleepingLastTick;
-import static SimpleNightmares.config.Config.*;
+import static SimpleNightmares.config.Config.enableNightmares;
+import static SimpleNightmares.config.Config.nightmareChance;
 
 
 public class NightmareEventHandler {
@@ -56,6 +52,8 @@ public class NightmareEventHandler {
                             // Apply effect based on presence of DreamCatcher
                             if (isDreamCatcherNearby) {
                                 // Apply buff, add custom status effect later
+                                player.world.playSound(null, player.posX, player.posY, player.posZ, SoundEvents.MUSIC_DRAGON, SoundCategory.PLAYERS, 1.0F, 1.0F);
+                                player.sendStatusMessage(new TextComponentString(TextFormatting.DARK_AQUA + "You feel blessed..." + TextFormatting.RESET), true);
                                 player.addPotionEffect(new PotionEffect(Potion.getPotionFromResourceLocation("simplenightmares:moonsblessing"), 12000, 0));
                             } else {
                                 // Create and post the NightmareEvent

@@ -139,7 +139,7 @@ public class Config {
                 "0.99,lycanitesmobs:insomnia,2400,2",
                 "0.99,lycanitesmobs:penetration,2400,0",
                 "0.99,minecraft:poison,2400,0",
-                "0.99,minecraft:unlock,2400,1",
+                "0.99,minecraft:unluck,2400,1",
         };
         String[] potionEffectConfig = cfg.getStringList("nightmareEffectConfig", CATEGORY_NIGHTMAREEFFECTS, defaultConfig, "");
         for (String effect : potionEffectConfig) {
