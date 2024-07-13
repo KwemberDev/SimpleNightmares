@@ -19,6 +19,6 @@ tile.simplenightmares.black_oakbed.name=Oak Bed
 tile.simplenightmares.light_blue_oakbed.name=Oak Bed
 tile.simplenightmares.wroughtironbed.name=Wrought Iron Bed
 tile.simplenightmares.wroughtcincinnasitebed.name=Wrought Cincinnasite Bed
-tile.simplenightmares.dreamcatcher.name=Moon Lantern
+tile.simplenightmares.dreamcatcher.name=§3Moon Lantern
 item.simplenightmares.moonfragment.name=Lunar Fragment
 commands.sleepPercentage.success=Successfully set requirements.

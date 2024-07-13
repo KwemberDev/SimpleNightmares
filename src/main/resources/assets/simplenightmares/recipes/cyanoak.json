@@ -1,11 +1,11 @@
 {
   "result": {
-    "item": "kwemsmod:oakbed"
+    "item": "simplenightmares:cyan_oakbed"
   },
   "pattern": [
+    "ccc",
     "www",
-    "ddd",
-    "   "
+    "ddd"
   ],
   "type": "forge:ore_shaped",
   "key": {
@@ -14,8 +14,12 @@
       "data": 0
     },
     "w": {
-      "item": "quark:quilted_wool",
-      "data": 0
+      "item": "minecraft:wool",
+      "data": 9
+    },
+    "c": {
+      "item": "minecraft:carpet",
+      "data": 9
     }
   }
 }
