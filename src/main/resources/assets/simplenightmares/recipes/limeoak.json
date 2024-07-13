@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "simplenightmares:lime_oakbed"
+  },
+  "pattern": [
+    "ccc",
+    "www",
+    "ddd"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:log",
+      "data": 0
+    },
+    "w": {
+      "item": "minecraft:wool",
+      "data": 5
+    },
+    "c": {
+      "item": "minecraft:carpet",
+      "data": 5
+    }
+  }
+}

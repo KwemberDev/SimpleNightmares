@@ -1,9 +1,9 @@
 {
   "result": {
-    "item": "kwemsmod:oakbed"
+    "item": "simplenightmares:red_oakbed"
   },
   "pattern": [
-    "   ",
+    "ccc",
     "www",
     "ddd"
   ],
@@ -14,8 +14,12 @@
       "data": 0
     },
     "w": {
-      "item": "quark:quilted_wool",
-      "data": 0
+      "item": "minecraft:wool",
+      "data": 14
+    },
+    "c": {
+      "item": "minecraft:carpet",
+      "data": 14
     }
   }
 }

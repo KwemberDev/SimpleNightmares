@@ -1,0 +1,24 @@
+{
+  "result": {
+    "item": "simplenightmares:dreamcatcher"
+  },
+  "pattern": [
+    "wfw",
+    "fdf",
+    "wfw"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:diamond",
+      "data": 0
+    },
+    "w": {
+      "item": "minecraft:iron_ingot",
+      "data": 0
+    },
+    "f": {
+      "item": "simplenightmares:moonfragment"
+    }
+  }
+}
