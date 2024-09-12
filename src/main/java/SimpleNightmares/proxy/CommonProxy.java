@@ -44,7 +44,7 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
         File directory = e.getModConfigurationDirectory();
-        config = new Configuration(new File(directory.getPath(), "SimpleNightmares-RLBeds.cfg"));
+        config = new Configuration(new File(directory.getPath(), "SimpleNightmares.cfg"));
         Config.readConfig();
     }
 
