@@ -86,7 +86,7 @@ public class SleepPercentageCommand extends CommandBase {
         if (enableSinglePlayerDebug) {onplayers = 1;}
 
 
-        if (onlinePlayers >= onplayers && enableChatFeedback) {
+        if (onlinePlayers >= onplayers) {
             int percentage = Math.round(((float) sleepingPlayers /(float) onlinePlayers)*100);
             int togo = sleepPlayers-sleepingPlayers;
 
@@ -94,27 +94,35 @@ public class SleepPercentageCommand extends CommandBase {
                 togo = server.getCurrentPlayerCount() - sleepingPlayers;
             }
 
-            if (sleepPlayers != -1) {
-                ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + togo + ")" + TextFormatting.RESET);
-                server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
-            }
-            else {
-                ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername  + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + percentage + "%)" + TextFormatting.RESET);
-                server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
+            if (enableChatFeedback) {
+                if (sleepPlayers != -1) {
+                    ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + togo + ")" + TextFormatting.RESET);
+                    server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
+                } else {
+                    ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + percentage + "%)" + TextFormatting.RESET);
+                    server.getPlayerList().getPlayers().forEach(player-> player.sendMessage(message));
+                }
             }
             if (enableChatRemarks) {
                 if (sleepPlayers != -1) {
                     if (sleepingPlayers >= sleepPlayers) {
-
-                        ITextComponent dayMessage = new TextComponentString(TextFormatting.getValueByName(wakeUpMessageColor.toUpperCase()) + getRandomMessage() + TextFormatting.RESET);
-                        server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(dayMessage));
+                        server.getPlayerList().getPlayers().forEach(player -> {
+                            if (player.isPlayerSleeping()) {
+                                ITextComponent dayMessage = new TextComponentString(TextFormatting.getValueByName(wakeUpMessageColor.toUpperCase()) + getRandomMessage() + TextFormatting.RESET);
+                                player.sendMessage(dayMessage);
+                            }
+                        });
                     }
                 } else if (((float) sleepingPlayers / onlinePlayers) >= ((float) sleepPercentage / 100)) {
-
-                    ITextComponent dayMessage = new TextComponentString(TextFormatting.getValueByName(wakeUpMessageColor.toUpperCase()) + getRandomMessage() + TextFormatting.RESET);
-                    server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(dayMessage));
+                    server.getPlayerList().getPlayers().forEach(player -> {
+                        if (player.isPlayerSleeping()) {
+                            ITextComponent dayMessage = new TextComponentString(TextFormatting.getValueByName(wakeUpMessageColor.toUpperCase()) + getRandomMessage() + TextFormatting.RESET);
+                            player.sendMessage(dayMessage);
+                        }
+                    });
                 }
             }
+
         }
     }
 

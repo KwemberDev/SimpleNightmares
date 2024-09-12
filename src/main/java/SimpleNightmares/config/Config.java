@@ -103,7 +103,7 @@ public class Config {
         sleepPlayers = cfg.getInt("sleepPlayers", CATEGORY_SLEEP, -1, -1, 99, "The amount of players that need to sleep to skip the night, if this option is selected. ONLY ALTER THROUGH IN GAME COMMAND /setsleeppercentage");
 
         enableChatFeedback = cfg.getBoolean("enableChatFeedback", CATEGORY_SLEEP, true, "Enable or Disable the 'player is sleeping' feedback in chat");
-        enableChatRemarks = cfg.getBoolean("enableChatRemarks", CATEGORY_SLEEP, true, "Enable or Disable the feedback in chat when sleeping in multiplayer.");
+        enableChatRemarks = cfg.getBoolean("enableChatRemarks", CATEGORY_SLEEP, true, "Enable or Disable the dream feedback in chat when sleeping in multiplayer.");
 
         sleepMessageColor = cfg.getString("sleepMessageColor", CATEGORY_SLEEP, "GOLD", "Set the color for the 'is now sleeping' message. Color name must match TextFormatting enums.");
         wakeUpMessageColor = cfg.getString("wakeUpMessageColor", CATEGORY_SLEEP, "GOLD", "Set the color for the wake up chat remarks. Color name must match TextFormatting enums.");
