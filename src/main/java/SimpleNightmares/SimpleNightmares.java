@@ -19,8 +19,8 @@ public class SimpleNightmares {
 
     // create the mod info data
     public static final String MODID = "simplenightmares";
-    public static final String MODNAME = "SimpleNightmares-RLBeds";
-    public static final String MODVERSION= "Beta 1.1.10";
+    public static final String MODNAME = "SimpleNightmares";
+    public static final String MODVERSION= "Beta 1.1.11";
 
     //tells forge where to look for the server and client side proxies
     @SidedProxy(clientSide = "SimpleNightmares.proxy.ClientProxy", serverSide = "SimpleNightmares.proxy.ServerProxy")

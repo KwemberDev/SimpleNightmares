@@ -69,12 +69,17 @@ public class SleepPercentageCommand extends CommandBase {
         int onlinePlayers = server.getCurrentPlayerCount();
 
         if (sleepPlayers != -1) {
-            if (sleepingPlayers >= sleepPlayers || sleepingPlayers == server.getCurrentPlayerCount()) {
-                server.getWorld(0).setWorldTime(1000);
+            if (sleepingPlayers >= sleepPlayers || sleepingPlayers == server.getCurrentPlayerCount() && onlinePlayers != 1) {
+                long currentTime = server.getWorld(0).getWorldTime();
+                long timeToAdd = (24000 - (currentTime % 24000)) % 24000;
+                server.getWorld(0).setWorldTime(currentTime + timeToAdd);
             }
-        } else if (((float) sleepingPlayers / onlinePlayers) >= ((float) sleepPercentage / 100)) {
-            server.getWorld(0).setWorldTime(1000);
+        } else if (((float) sleepingPlayers / onlinePlayers) >= ((float) sleepPercentage / 100) && onlinePlayers != 1) {
+            long currentTime = server.getWorld(0).getWorldTime();
+            long timeToAdd = (24000 - (currentTime % 24000)) % 24000;
+            server.getWorld(0).setWorldTime(currentTime + timeToAdd);
         }
+
 
         int onplayers = 2;
         // Only send messages if there are two or more players online
@@ -100,13 +105,11 @@ public class SleepPercentageCommand extends CommandBase {
             if (enableChatRemarks) {
                 if (sleepPlayers != -1) {
                     if (sleepingPlayers >= sleepPlayers) {
-                        server.getWorld(0).setWorldTime(1000);
 
                         ITextComponent dayMessage = new TextComponentString(TextFormatting.getValueByName(wakeUpMessageColor.toUpperCase()) + getRandomMessage() + TextFormatting.RESET);
                         server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(dayMessage));
                     }
                 } else if (((float) sleepingPlayers / onlinePlayers) >= ((float) sleepPercentage / 100)) {
-                    server.getWorld(0).setWorldTime(1000);
 
                     ITextComponent dayMessage = new TextComponentString(TextFormatting.getValueByName(wakeUpMessageColor.toUpperCase()) + getRandomMessage() + TextFormatting.RESET);
                     server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(dayMessage));
