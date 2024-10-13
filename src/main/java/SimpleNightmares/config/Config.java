@@ -24,6 +24,7 @@ public class Config {
     public static boolean enableChatRemarks = true;
     public static List<String> chatFeedback = new ArrayList<>();
     public static boolean enableChatFeedback = true;
+    public static boolean enableSinglePlayerChatFeedback = true;
     public static int sleepPercentage = 100;
     public static int sleepPlayers = -1;
     public static String sleepMessageColor = "GOLD";
@@ -104,6 +105,9 @@ public class Config {
 
         enableChatFeedback = cfg.getBoolean("enableChatFeedback", CATEGORY_SLEEP, true, "Enable or Disable the 'player is sleeping' feedback in chat");
         enableChatRemarks = cfg.getBoolean("enableChatRemarks", CATEGORY_SLEEP, true, "Enable or Disable the dream feedback in chat when sleeping in multiplayer.");
+
+        enableSinglePlayerChatFeedback = cfg.getBoolean("enableSinglePlayerChatFeedback", CATEGORY_SLEEP, true, "Helper config option. If singlePlayerDebug is enabled but this option is disabled, 'player is sleeping' feedback will not occur when 1 player is in the world.");
+
 
         sleepMessageColor = cfg.getString("sleepMessageColor", CATEGORY_SLEEP, "GOLD", "Set the color for the 'is now sleeping' message. Color name must match TextFormatting enums.");
         wakeUpMessageColor = cfg.getString("wakeUpMessageColor", CATEGORY_SLEEP, "GOLD", "Set the color for the wake up chat remarks. Color name must match TextFormatting enums.");

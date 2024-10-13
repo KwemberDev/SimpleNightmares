@@ -95,12 +95,25 @@ public class SleepPercentageCommand extends CommandBase {
             }
 
             if (enableChatFeedback) {
-                if (sleepPlayers != -1) {
-                    ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + togo + ")" + TextFormatting.RESET);
-                    server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
-                } else {
-                    ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + percentage + "%)" + TextFormatting.RESET);
-                    server.getPlayerList().getPlayers().forEach(player-> player.sendMessage(message));
+
+                if (onlinePlayers < 2 && enableSinglePlayerChatFeedback) {
+                    if (sleepPlayers != -1) {
+                        ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + togo + ")" + TextFormatting.RESET);
+                        server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
+                    } else {
+                        ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + percentage + "%)" + TextFormatting.RESET);
+                        server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
+                    }
+                }
+
+                if (onlinePlayers >= 2) {
+                    if (sleepPlayers != -1) {
+                        ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + togo + ")" + TextFormatting.RESET);
+                        server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
+                    } else {
+                        ITextComponent message = new TextComponentString(TextFormatting.getValueByName(sleepMessageColor.toUpperCase()) + playername + " is now sleeping (" + sleepingPlayers + "/" + onlinePlayers + ")" + " (" + percentage + "%)" + TextFormatting.RESET);
+                        server.getPlayerList().getPlayers().forEach(player -> player.sendMessage(message));
+                    }
                 }
             }
             if (enableChatRemarks) {
